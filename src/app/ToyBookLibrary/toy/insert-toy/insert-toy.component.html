@@ -1,0 +1,67 @@
+<div class="alert alert-primary">
+    <h3>Toy Form</h3>
+</div>
+<form [formGroup]="toyForm" (ngSubmit)="insertToy()">
+    <!-- <div class="form-group"> -->
+        <!-- <div *ngIf="toyForm.controls['toyId'].errors && 
+        (toyForm.controls['toyId'].touched || toyForm.controls['toyId'].dirty)">
+           Toy Id is required
+        </div>
+        <label for="toyId">Toy Id</label>
+        <input class="form-control" type="text" name="toyId" id="toyId" formControlName="toyId">
+    </div> -->
+
+    <div class="form-group">
+        <div *ngIf="toyForm.controls['name'].errors && 
+                (toyForm.controls['name'].touched || toyForm.controls['name'].dirty)">
+            Name is required
+        </div>
+        <label for="name"> Name</label>
+        <input class="form-control" type="text" name="name" id="name" formControlName="name">
+    </div>
+
+    <div class="form-group">
+        <div *ngIf="toyForm.controls['category'].errors && 
+        (toyForm.controls['category'].touched || toyForm.controls['category'].dirty)">
+            Category is required
+        </div>
+
+        <label for="category">Category</label>
+        <input class="form-control" type="text" name="category" id="category" formControlName="category">
+    </div>
+
+    <div class="form-group">
+        <div *ngIf="toyForm.controls['company'].errors && 
+        (toyForm.controls['company'].touched || toyForm.controls['company'].dirty)">
+        Company is required
+        </div>
+
+        <label for="company">company</label>
+        <input class="form-control" type="text" name="company" id="company" formControlName="company">
+    </div>
+
+    <div class="form-group">
+        <div *ngIf="toyForm.controls['price'].errors && 
+        (toyForm.controls['price'].touched || toyForm.controls['price'].dirty)">
+        Price is required
+        </div>
+
+        <label for="price">price</label>
+        <input class="form-control" type="number" min="0" oninput="this.value = Math.abs(this.value)" name="price" id="price" formControlName="price">
+
+    </div>
+
+    <div class="form-group">
+        <div *ngIf="toyForm.controls['availabletoys'].errors && 
+        (toyForm.controls['availabletoys'].touched || toyForm.controls['availabletoys'].dirty)">
+        Price is required
+        </div>
+
+        <label for="availabletoys">availabletoys</label>
+        <input class="form-control" type="number" name="availabletoys" id="availabletoys" formControlName="availabletoys">
+    </div>
+
+
+    <input type="submit" value="Insert Toy" class="btn btn-primary" >
+</form>
+

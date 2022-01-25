@@ -1,0 +1,24 @@
+<p>delete-admin works!</p>
+<hr>
+<table class="table table-bordered">
+    <tr *ngIf="toys?.length > 0">
+        <th>Toy Id</th>
+        <th>Toy name</th>
+        <th>Toy category</th>
+        <th>Toy company</th>
+        <th>Toy price</th>
+        <th>Available toys</th>
+    
+    </tr>
+    <tr *ngFor="let bk of toys">
+        <td>{{bk.toyId}}</td>
+        <td>{{bk.name}}</td>
+        <td>{{bk.category}}</td>
+        <td>{{bk.company}}</td>
+        <td>{{bk.price}}</td>
+        <td>{{bk.availabletoys}}</td>
+    
+        <td><button class="btn btn-danger" (click)="deleteToy(bk.toyId)"> Delete</button>
+   
+    </tr>
+</table>

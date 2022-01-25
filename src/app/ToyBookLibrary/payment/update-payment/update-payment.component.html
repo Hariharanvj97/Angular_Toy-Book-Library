@@ -1,0 +1,36 @@
+<div class="alert alert-primary">
+    <h3>Update Payment</h3>
+  </div>
+  <form [formGroup]="paymentForm" (ngSubmit)="updatePayment()">
+
+    <div class="form-group">
+        <div *ngIf="paymentForm.controls['paymentId'].errors &&
+         (paymentForm.controls['paymentId'].touched || paymentForm.controls['paymentId'].dirty)">
+         PaymentId is required
+        </div>
+        <label for="paymentId">PaymentId</label>
+        <input class="form-control" type="text" name="paymentId" id="paymentId" formControlName="paymentId">
+         </div>
+
+    
+    <div class="form-group">
+        <div *ngIf="paymentForm.controls['startDate'].errors &&
+         (paymentForm.controls['startDate'].touched || paymentForm.controls['startDate'].dirty)">
+       StartDate is required
+        </div>
+        <label for="startDate">startDate</label>
+        <input class="form-control" type="date" name="startDate" id="startDate" formControlName="startDate">
+         </div>
+
+         <div class="form-group">
+           <div *ngIf="paymentForm.controls['endDate'].errors &&
+            (paymentForm.controls['endDate'].touched || paymentForm.controls['endDate'].dirty)">
+            EndDate is required
+           </div>
+   
+           <label for="endDate">EndDate</label>
+           <input class="form-control" type="date" name="endDate" id="endDate" formControlName="endDate">
+            </div>
+
+            <input type="submit" value="Update Payment" class="btn btn-primary">
+            </form>

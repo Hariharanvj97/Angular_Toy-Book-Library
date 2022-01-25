@@ -1,0 +1,82 @@
+<div class="alert alert-primary">
+    <h3>Admin Update Form</h3>
+</div>
+<form [formGroup]="adminForm" (ngSubmit)="updateAdmin()">
+    <div class="form-group">
+        <div *ngIf="adminForm.controls['adminId'].errors && 
+        (adminForm.controls['adminId'].touched || adminForm.controls['adminId'].dirty)">
+            Admin Id is required
+        </div>
+        <label for="adminId">Admin Id</label>
+        <input class="form-control" type="text" name="adminId" id="adminId" formControlName="adminId">
+    </div>
+
+    <div class="form-group">
+        <div *ngIf="adminForm.controls['username'].errors && 
+                (adminForm.controls['username'].touched || adminForm.controls['username'].dirty)">
+            Admin Username is required
+        </div>
+        <label for="username">Admin Username </label>
+        <input class="form-control" type="text" name="username" id="username" formControlName="username" >
+    </div>
+
+
+    <div class="form-group">
+        <div *ngIf="adminForm.controls['password'].errors && 
+        (adminForm.controls['password'].touched || adminForm.controls['password'].dirty)">
+            Admin Password is required
+        </div>
+ 
+        <label for="password">Password</label>
+        <input class="form-control" type="text" name="password" id="password" formControlName="password">
+    </div>
+
+    <div class="form-group">
+        <div *ngIf="adminForm.controls['mobile'].errors && 
+        (adminForm.controls['mobile'].touched || adminForm.controls['mobile'].dirty)">
+            Admin Mobile Number is required
+        </div>
+ 
+        <label for="mobile">Admin Mobile Number</label>
+        <input class="form-control" type="text" name="mobile" id="mobile" formControlName="mobile">
+    </div>
+
+
+    
+    <div class="form-group">
+        <div *ngIf="adminForm.controls['address'].errors && 
+        (adminForm.controls['address'].touched || adminForm.controls['address'].dirty)">
+            Admin Address is required
+        </div>
+ 
+        <label for="address">Admin Address </label>
+        <input class="form-control" type="text" name="address" id="address" formControlName="address">
+    </div>
+
+
+    
+    <div class="form-group">
+        <div *ngIf="adminForm.controls['email'].errors && 
+        (adminForm.controls['email'].touched || adminForm.controls['email'].dirty)">
+            Admin Email Id is required
+        </div>
+ 
+        <label for="email">Admin Email Id</label>
+        <input class="form-control" type="text" name="email" id="email" formControlName="email">
+    </div>
+
+    
+    <div class="form-group">
+        <label for="description">Gender</label>
+        <select formControlName="description" class="form-control">
+            <option disabled>Select Membership Type </option>
+            <option>Choose Description </option>
+            <option *ngFor="let description of gender">{{description}}</option>
+        </select>
+        <div *ngIf="f['description'].touched && f['description'].invalid" class="alert alert-danger">
+            <div *ngIf="f['description'].errors['required']">gender is required</div>
+        </div>
+    </div>
+    
+    <input type="submit" value="Update Admin" class="btn btn-primary"><p>update-admin works!</p>
+</form>

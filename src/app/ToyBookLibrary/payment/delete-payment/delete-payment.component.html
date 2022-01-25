@@ -1,0 +1,23 @@
+
+
+
+<table class="table table-bordered">
+ <tr *ngIf="payments.length > 0">
+     
+     <th>StartDate</th>
+     <th>EndDate</th>
+    
+ </tr>
+
+ <tr *ngFor="let pt of payments">
+    
+     <td>{{pt.startDate}}</td>
+     <td>{{pt.endDate}}</td>
+
+     <td><button class="btn btn-danger" (click)="deletePayment(pt.paymentId)"> Delete</button>
+
+
+     
+    
+ </tr>
+</table>

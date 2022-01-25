@@ -1,0 +1,99 @@
+<div class="alert alert-primary">
+    <h3>Parent Register Form</h3>
+    </div>
+    <form [formGroup]="parentForm" (ngSubmit)=" saveParent()">
+    <div class="form-group">
+    <div *ngIf="parentForm.controls['username'].errors &&
+    (parentForm.controls['username'].touched || parentForm.controls['username'].dirty)">
+     Username is required
+    </div>
+<label for="username">User Name</label>
+    <input class="form-control" [readonly]="isUpdate" type="text" name="username" id="username" formControlName="username">
+    </div>
+    
+    
+    
+     <div class="form-group">
+    <div *ngIf="parentForm.controls['password'].errors &&
+     (parentForm.controls['password'].touched || parentForm.controls['password'].dirty)">
+    Password <Title></Title> is required
+     </div>
+     <label for="password">Password</label>
+    <input class="form-control" type="text" name="password" id="password" formControlName="password" >
+    </div>
+    
+    <div class="form-group">
+        <label for="description">Gender</label>
+        <select formControlName="description" class="form-control">
+            <option disabled>Select Gender</option>
+            <option>Choose Gender Description </option>
+            <option *ngFor="let description of gender">{{description}}</option>
+        </select>
+        <div *ngIf="f['description'].touched && f['description'].invalid" class="alert alert-danger">
+            <div *ngIf="f['description'].errors['required']">gender is required</div>
+        </div>
+    </div>
+    
+    
+    
+    <div class="form-group">
+    <div *ngIf="parentForm.controls['mobile'].errors &&
+    (parentForm.controls['mobile'].touched || parentForm.controls['mobile'].dirty)">
+     Mobile number is required
+     </div>
+    
+     <label for="mobile">Mobile Number</label>
+     <input class="form-control" type="text" name="mobile" id="mobile" formControlName="mobile">
+    </div>
+    
+    
+    <div class="form-group">
+     <div *ngIf="parentForm.controls['email'].errors &&
+     (parentForm.controls['email'].touched || parentForm.controls['email'].dirty)">
+     E-mail is required
+    </div>
+
+     <label for="email">E-mail </label>
+     <input class="form-control" type="text" name="email" id="email" formControlName="email">
+    </div>
+    
+    
+     <div class="form-group">
+     <div *ngIf="parentForm.controls['address'].errors &&
+    (parentForm.controls['address'].touched || parentForm.controls['address'].dirty)">
+    Address is required
+    </div>
+    
+    <label for="address">Address</label>
+     <input class="form-control" type="text" name="address" id="address" formControlName="address">
+     </div>
+
+     
+     <div class="form-group">
+        <div *ngIf="parentForm.controls['cardNo'].errors &&
+       (parentForm.controls['cardNo'].touched || parentForm.controls['cardNo'].dirty)">
+       cardNo is required
+       </div>
+       
+       <label for="cardNo">cardNo</label>
+        <input class="form-control" type="text" name="cardNo" id="cardNo" formControlName="cardNo">
+        </div>
+
+        <div class="form-group">
+            <div *ngIf="parentForm.controls['upiNo'].errors &&
+           (parentForm.controls['upiNo'].touched || parentForm.controls['upiNo'].dirty)">
+           upiNo is required
+           </div>
+           
+           <label for="upiNo">upiNo</label>
+            <input class="form-control" type="text" name="upiNo" id="upiNo" formControlName="upiNo">
+            </div>
+           
+       
+    
+    
+    
+     <input type="submit" value="Register" class="btn btn-primary" >
+
+    </form>
+   

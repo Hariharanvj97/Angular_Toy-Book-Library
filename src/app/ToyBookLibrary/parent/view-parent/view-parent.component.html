@@ -1,0 +1,34 @@
+<hr>
+<h3>view tables</h3>
+
+
+<table class="table table-bordered">
+ <tr *ngIf="parents.length > 0">
+    <th>ParentId</th>
+     <th>Username</th>
+     <th>Password</th>
+     <th>Gender</th>
+     <th>Mobile</th>
+     <th>E-mail</th>
+     <th>Address</th>
+     <th>cardNo</th>
+     <th>upiNo</th>  
+ </tr>
+
+ <tr *ngFor="let pt of parents">
+    <td>{{pt.parentId}}</td>
+     <td>{{pt.username}}</td>
+     <td>{{pt.password}}</td>
+     <td>{{pt.gender}}</td>
+     <td>{{pt.mobile}}</td>
+     <td>{{pt.email}}</td>
+    <td>{{pt.address}}</td>
+    <td>{{pt.cardNo}}</td>
+    <td>{{pt.upiNo}}</td>
+    
+
+    <!-- <td><button class="btn btn-danger" (click)="deleteParent(pt.parentId)"> Delete</button>
+        <button class="btn btn-success" routerLink="/update-parent" (click)="editParent(pt)" style="margin-left: 20px;"> Update </button></td> -->
+
+ </tr>
+</table>

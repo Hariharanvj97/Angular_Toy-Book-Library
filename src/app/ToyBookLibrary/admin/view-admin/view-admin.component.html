@@ -1,0 +1,23 @@
+<hr>
+<table class="table table-bordered">
+    <tr *ngIf="admins?.length > 0">
+        <!-- <th>Admin Id</th> -->
+        <th>Admin Username</th>
+        <th>Admin Password</th>
+        <th>Admin Mobile Number</th>
+        <th>Admin Address</th>
+        <th>Admin Email Id</th>
+        <th>Admin Gender</th>
+    </tr>
+    <tr *ngFor="let bk of admins">
+        <!-- <td>{{bk.adminId}}</td> -->
+        <td>{{bk.username}}</td>
+        <td>{{bk.password}}</td>
+        <td>{{bk.mobile}}</td>
+        <td>{{bk.address}}</td>
+        <td>{{bk.email}}</td>
+        <td>{{bk.gender}}</td>
+        <!-- <td><button class="btn btn-success" routerLink="/updateadmin" (click)="editAdmin(bk)"> Update </button> -->
+   
+    </tr>
+</table>

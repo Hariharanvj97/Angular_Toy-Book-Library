@@ -1,0 +1,118 @@
+<div class="container">
+    <div class="title">Registration</div>
+    <div class="content">
+      <form action="#">
+        <div class="user-details">
+            
+<form [formGroup]="childForm" (ngSubmit)="insertchild()">
+    <div class="form-group">
+        <div *ngIf="childForm.controls['username'].errors && 
+        (childForm.controls['username'].touched || childForm.controls['username'].dirty)">
+            Username is required
+        </div>
+        <label for="username">User Name</label>
+            <input class="form-control" [readonly]="isUpdate" type="text" name="username" id="username" formControlName="username" placeholder="Enter your name">
+    </div>
+         
+
+
+
+    <div class="form-group">
+        <div *ngIf="childForm.controls['password'].errors && 
+                (childForm.controls['password'].touched || childForm.controls['password'].dirty)">
+            Password <Title></Title> is required
+        </div>
+        <label for="password">Password</label>
+        <input class="form-control" type="text" name="password" id="password" formControlName="password" >
+    </div>
+
+
+    <div class="form-group">
+        <div *ngIf="childForm.controls['dob'].errors && 
+        (childForm.controls['dob'].touched || childForm.controls['dob'].dirty)">
+           Date of Birth is required
+        </div>
+ 
+        <label for="dob">Date of Birth</label>
+        <input class="form-control" type="date" name="dob" id="dob" formControlName="dob">
+    </div>
+
+    <div class="form-group">
+        <div *ngIf="childForm.controls['mobile'].errors && 
+        (childForm.controls['mobile'].touched || childForm.controls['mobile'].dirty)">
+            Mobile number is required
+        </div>
+ 
+        <label for="mobile">Mobile Number</label>
+        <input class="form-control" type="text" name="mobile" id="mobile" formControlName="mobile">
+    </div>
+
+
+    
+    <div class="form-group">
+        <div *ngIf="childForm.controls['email'].errors && 
+        (childForm.controls['email'].touched || childForm.controls['email'].dirty)">
+            E-mail is required
+        </div>
+ 
+        <label for="email">E-mail </label>
+        <input class="form-control" type="text" name="email" id="email" formControlName="email">
+    </div>
+
+
+    
+    <div class="form-group">
+        <label for="description">Gender</label>
+        <select formControlName="description" class="form-control">
+            <option disabled>Select Gender </option>
+            <option>Choose Gender Description </option>
+            <option *ngFor="let description of gender">{{description}}</option>
+        </select>
+        <div *ngIf="f['description'].touched && f['description'].invalid" class="alert alert-danger">
+            <div *ngIf="f['description'].errors['required']">gender is required</div>
+        </div>
+    </div>
+
+    
+    <div class="form-group">
+        <div *ngIf="childForm.controls['address'].errors && 
+        (childForm.controls['address'].touched || childForm.controls['address'].dirty)">
+            Address is required
+        </div>
+ 
+        <label for="address">Address</label>
+        <input class="form-control" type="text" name="address" id="address" formControlName="address">
+    </div>
+
+
+
+    <input type="submit" value="Register" class="btn btn-primary" >
+   
+</form>
+</div>
+<!-- 
+<hr>
+<table class="table table-bordered">
+    <tr *ngIf="childs.length > 0">
+        <th>ChildId</th>
+        <th>Username</th>
+        <th>Password</th>
+        <th>Dateof Birth</th>
+        <th>Mobile</th>
+        <th>E-mail</th>
+        <th>Gender</th>
+        <th>Address</th>
+    </tr>
+    <tr *ngFor="let cd of childs">
+        <td>{{cd.childId}}</td>
+        <td>{{cd.username}}</td>
+        <td>{{cd.password}}</td>
+        <td>{{cd.dob}}</td>
+        <td>{{cd.mobile}}</td>
+        <td>{{cd.email}}</td>
+        <td>{{cd.gender}}</td>
+        <td>{{cd.address}}</td>
+        <td><input type="button" (click)="deleteBook(bk.bookId)" value="Delete" class="btn btn-primary"></td>
+        <td><input type="button" (click)="UpdateBook(bk.bookId)"value="Update" class="btn btn-primary"></td> 
+    </tr>
+</table>  -->

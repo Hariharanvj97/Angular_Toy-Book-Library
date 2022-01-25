@@ -1,0 +1,27 @@
+
+<hr>
+<h3>Delete Child</h3>
+<table class="table table-bordered">
+    <tr *ngIf="childs.length > 0">
+        <th>Username</th>
+        <th>Password</th>
+        <th>Date of Birth</th>
+        <th>Mobile</th>
+        <th>E-mail</th>
+        <th>Gender</th>
+        <th>Address</th>
+    </tr>
+    <tr *ngFor="let cd of childs">
+        <td>{{cd.username}}</td>
+        <td>{{cd.password}}</td>
+        <td>{{cd.dob}}</td>
+        <td>{{cd.mobile}}</td>
+        <td>{{cd.email}}</td>
+        <td>{{cd.gender}}</td>
+        <td>{{cd.address}}</td>
+        <td><button class="btn btn-danger" (click)="deleteChild(cd.childId)"> Delete</button>
+       
+    </tr>
+</table> 
+
+

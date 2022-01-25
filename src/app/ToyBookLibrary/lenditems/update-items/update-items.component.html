@@ -1,0 +1,70 @@
+<div class="alert alert-primary">
+    <h3>Update Form</h3>
+</div>
+<form [formGroup]="lendForm" (ngSubmit)="updateLendItems()">
+    <div class="form-group">
+        <div *ngIf="lendForm.controls['lendId'].errors && 
+        (lendForm.controls['lendId'].touched || lendForm.controls['lendId'].dirty)">
+            Lenditems Id is required
+        </div>
+        <label for="lendId">Lenditems Id</label>
+        <input class="form-control" type="text" name="lendId" id="lendId" formControlName="lendId">
+    </div>
+    <div class="form-group">
+        <div *ngIf="lendForm.controls['fine'].errors && 
+        (lendForm.controls['fine'].touched || lendForm.controls['fine'].dirty)">
+            Fine is required
+        </div>
+
+        <label for="fine">Fine</label>
+        <input class="form-control" type="text" name="fine" id="fine" formControlName="fine" required>
+        
+    </div>
+    <div class="form-group">
+        <div *ngIf="lendForm.controls['lendDate'].errors && 
+                (lendForm.controls['lendDate'].touched || lendForm.controls['lendDate'].dirty)">
+            lendDate is required
+        </div>
+        <label for="lendDate">Lend Date</label>
+        <input class="form-control" type="date" name="lendDate" id="lendDate" formControlName="lendDate">
+    </div>
+    <div class="form-group">
+        <div *ngIf="lendForm.controls['returnDate'].errors && 
+        (lendForm.controls['returnDate'].touched || lendForm.controls['returnDate'].dirty)">
+        returnDate is required
+        </div>
+
+        <label for="returnDate"> Return Date</label>
+        <input class="form-control" type="date" name="returnDate" id="returnDate" formControlName="returnDate">
+    </div>
+
+    <div class="form-group">
+        <div *ngIf="lendForm.controls['bookId'].errors && 
+        (lendForm.controls['bookId'].touched || lendForm.controls['bookId'].dirty)">
+            bookId is required
+        </div>
+
+        <label for="bookId">bookId</label>
+        <input class="form-control" type="text" name="bookId" id="bookId" formControlName="bookId">
+    </div>
+    <div class="form-group">
+        <div *ngIf="lendForm.controls['childId'].errors && 
+        (lendForm.controls['childId'].touched || lendForm.controls['childId'].dirty)">
+            userId is required
+        </div>
+
+        <label for="childId">Child Id</label>
+        <input class="form-control" type="text" name="childId" id="childId" formControlName="childId">
+    </div>
+    <div class="form-group">
+        <div *ngIf="lendForm.controls['toyId'].errors && 
+        (lendForm.controls['toyId'].touched || lendForm.controls['toyId'].dirty)">
+            toyId is required
+        </div>
+
+        <label for="toyId">ToyId</label>
+        <input class="form-control" type="text" name="toyId" id="toyId" formControlName="toyId">
+    </div>
+    <input type="submit" value="update Lenditems" class="btn btn-primary" [disabled]="lendForm.invalid">
+</form>
+<table class="table table-striped" >

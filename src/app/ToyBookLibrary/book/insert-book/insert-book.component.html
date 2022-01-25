@@ -1,0 +1,78 @@
+
+<div class="alert alert-primary">
+    <h3>Book Form</h3>
+</div>
+<form [formGroup]="bookForm" (ngSubmit)="insertBook()">
+
+
+    <div class="form-group">
+        <div *ngIf="bookForm.controls['title'].errors && 
+                (bookForm.controls['title'].touched || bookForm.controls['title'].dirty)">
+            Book <Title></Title> is required
+        </div>
+        <label for="title">Book Title</label>
+        <input class="form-control" type="text" name="title" id="title" formControlName="title" >
+    </div>
+
+
+    <div class="form-group">
+        <div *ngIf="bookForm.controls['price'].errors && 
+        (bookForm.controls['price'].touched || bookForm.controls['price'].dirty)">
+            Book Price is required
+        </div>
+ 
+        <label for="price">Book Price</label>
+        <input class="form-control" type="text" name="price" id="price" formControlName="price">
+    </div>
+
+    <div class="form-group">
+        <div *ngIf="bookForm.controls['author'].errors && 
+        (bookForm.controls['author'].touched || bookForm.controls['author'].dirty)">
+            Book Author is required
+        </div>
+ 
+        <label for="author">Book Author</label>
+        <input class="form-control" type="text" name="author" id="author" formControlName="author">
+    </div>
+
+
+    
+    <div class="form-group">
+        <div *ngIf="bookForm.controls['category'].errors && 
+        (bookForm.controls['category'].touched || bookForm.controls['category'].dirty)">
+            Book Category is required
+        </div>
+ 
+        <label for="category">Book Category</label>
+        <input class="form-control" type="text" name="category" id="category" formControlName="category">
+    </div>
+
+
+    
+    <div class="form-group">
+        <div *ngIf="bookForm.controls['publication'].errors && 
+        (bookForm.controls['publication'].touched || bookForm.controls['publication'].dirty)">
+            Book Publication is required
+        </div>
+ 
+        <label for="publication">Book Publication</label>
+        <input class="form-control" type="text" name="publication" id="publication" formControlName="publication">
+    </div>
+
+    
+    <div class="form-group">
+        <div *ngIf="bookForm.controls['availablebooks'].errors && 
+        (bookForm.controls['availablebooks'].touched || bookForm.controls['availablebooks'].dirty)">
+            AvailableBooks is required
+        </div>
+ 
+        <label for="availablebooks">AvailableBooks</label>
+        <input class="form-control" type="text" name="availablebooks" id="availablebooks" formControlName="availablebooks">
+    </div>
+
+
+
+    <input type="submit" value="Save Book" class="btn btn-primary" [disabled]="bookForm.invalid">
+    <input class="form-control" type="number" min="0" oninput="this.value = Math.abs(this.value)" name="price" id="price" formControlName="price">
+</form>
+

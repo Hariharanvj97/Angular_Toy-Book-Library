@@ -1,0 +1,41 @@
+<p>insert-membership-type works!</p>
+<div class="alert alert-primary">
+    <h3>MembershipType Form</h3>
+</div>
+<form [formGroup]="membershipTypeForm" (ngSubmit)="insertMembershipType()">
+
+<div class="form-group">
+    <label for="description">description</label>
+    <select formControlName="description" class="form-control">
+        <option disabled>Select Membership Type </option>
+        <option>Choose Description </option>
+        <option *ngFor="let description of desclist">{{description}}</option>
+    </select>
+    <div *ngIf="f['description'].touched && f['description'].invalid" class="alert alert-danger">
+        <div *ngIf="f['description'].errors['required']">description is required</div>
+    </div>
+</div>
+
+
+    <div class="form-group">
+        <div *ngIf="membershipTypeForm.controls['durationMonths'].errors && 
+        (membershipTypeForm.controls['durationMonths'].touched || membershipTypeForm.controls['durationMonths'].dirty)">
+           Duration in Months is required
+        </div>
+
+        <label for="durationMonths">Duration in Months</label>
+        <input class="form-control" type="text" name="durationMonths" id="durationMonths" formControlName="durationMonths">
+    </div>
+
+  
+    <div class="form-group">
+        <div *ngIf="membershipTypeForm.controls['price'].errors && 
+        (membershipTypeForm.controls['price'].touched || membershipTypeForm.controls['price'].dirty)">
+        Price is required
+        </div>
+
+        <label for="price">price</label>
+        <input class="form-control" type="number" min="0" oninput="this.value = Math.abs(this.value)" name="price" id="price" formControlName="price">
+    </div>
+    <input type="submit" value="Insert membership Type" class="btn btn-primary">
+</form>

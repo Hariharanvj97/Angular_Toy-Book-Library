@@ -1,0 +1,32 @@
+<p>view-book works!</p>
+<!-- <div class="alert alert-primary">
+
+</div> -->
+<hr>
+
+<table class="table table-bordered">
+    <tr *ngIf="books.length > 0">
+        <th>Book Id</th>
+        <th>Book Title</th>
+        <th>Book Price</th>
+        <th>Book Author</th>
+        <th>Book Category</th>
+        <th>Book Publication</th>
+        <th>AvailableBooks</th>
+    </tr>
+    <tr *ngFor="let bk of books">
+        <td>{{bk.bookId}}</td>
+        <td>{{bk.title}}</td>
+        <td>{{bk.price}}</td>
+        <td>{{bk.author}}</td>
+        <td>{{bk.category}}</td>
+        <td>{{bk.publication}}</td>
+        <td>{{bk.availablebooks}}</td>
+
+        <!-- <td><button class="btn btn-danger" (click)="deleteBook(bk.bookId)"> Delete</button>
+            <button class="btn btn-success" routerLink="/update-book" (click)="editBook(bk)" style="margin-left: 20px;"> Update </button></td> -->
+
+      
+    </tr>
+</table>
+

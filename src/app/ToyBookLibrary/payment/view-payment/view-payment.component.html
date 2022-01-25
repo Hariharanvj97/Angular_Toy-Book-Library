@@ -1,0 +1,25 @@
+<hr>
+<h3>view tables</h3>
+
+
+<table class="table table-bordered">
+ <tr *ngIf="payments.length > 0">
+     <th>PaymentId</th>
+     <th>StartDate</th>
+     <th>EndDate</th>
+    
+ </tr>
+
+ <tr *ngFor="let pt of payments">
+     
+    <td>{{pt.paymentId}}</td>
+     
+     <td>{{pt.startDate}}</td>
+     <td>{{pt.endDate}}</td>
+     
+     
+    <!-- <td><button class="btn btn-danger" (click)="deletePayment(pt.paymentId)"> Delete</button>
+        <button class="btn btn-success" routerLink="/update-payment" (click)="editPayment(pt)" style="margin-left: 20px;"> Update </button></td>
+     -->
+ </tr>
+</table>

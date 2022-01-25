@@ -1,0 +1,17 @@
+<p>delete-membership-type works!</p>
+<hr>
+<table class="table table-bordered">
+    <tr *ngIf="member?.length > 0">
+        <th>Membership Type Id</th>
+        <th>Membership Description</th>
+        <th>Membership Duration in Months</th>
+        <th>Membership Price</th>
+    </tr>
+    <tr *ngFor="let bk of member">
+        <td>{{bk.membershipTypeId}}</td>
+        <td>{{bk.description}}</td>
+        <td>{{bk.durationMonths}}</td>
+        <td>{{bk.price}}</td>
+        <td><button class="btn btn-danger" (click)="deleteMembershipType(bk.membershipTypeId)"> Delete</button>
+    </tr>
+</table>

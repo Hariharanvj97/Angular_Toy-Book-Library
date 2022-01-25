@@ -1,0 +1,90 @@
+<div class="alert alert-primary">
+  <h3>Update Child</h3>
+</div>
+<form [formGroup]="childForm" (ngSubmit)="updateChild()">
+  <div class="form-group">
+      <div *ngIf="childForm.controls['childId'].errors && 
+      (childForm.controls['childId'].touched || childForm.controls['childId'].dirty)">
+     bookId is required
+      </div>
+      <label for="childId">ChildId </label>
+          <input class="form-control" [readonly]="isUpdate" type="text" name="childId" id="childId" formControlName="childId">
+  </div>
+  <div class="form-group">
+      <div *ngIf="childForm.controls['username'].errors && 
+              (childForm.controls['username'].touched || childForm.controls['username'].dirty)">
+              username is required
+      </div>
+      <label for="username">username</label>
+      <input class="form-control" type="text" name="username" id="username" formControlName="username" >
+  </div>
+  <div class="form-group">
+      <div *ngIf="childForm.controls['password'].errors && 
+              (childForm.controls['password'].touched || childForm.controls['password'].dirty)">
+              password is required
+      </div>
+      <label for="password">Password</label>
+      <input class="form-control" type="password" name="password" id="password" formControlName="password" >
+  </div>
+  
+  <div class="form-group">
+    <div *ngIf="childForm.controls['dob'].errors && 
+    (childForm.controls['dob'].touched || childForm.controls['dob'].dirty)">
+       Date of Birth is required
+    </div>
+
+    <label for="dob">Date of Birth</label>
+    <input class="form-control" type="date" name="dob" id="dob" formControlName="dob">
+</div>
+
+<div class="form-group">
+    <div *ngIf="childForm.controls['mobile'].errors && 
+    (childForm.controls['mobile'].touched || childForm.controls['mobile'].dirty)">
+        Mobile number is required
+    </div>
+
+    <label for="mobile">Mobile Number</label>
+    <input class="form-control" type="text" name="mobile" id="mobile" formControlName="mobile">
+</div>
+
+
+
+<div class="form-group">
+    <div *ngIf="childForm.controls['email'].errors && 
+    (childForm.controls['email'].touched || childForm.controls['email'].dirty)">
+        E-mail is required
+    </div>
+
+    <label for="email">E-mail </label>
+    <input class="form-control" type="email" name="email" id="email" formControlName="email">
+</div>
+
+
+
+<div class="form-group">
+    <label for="description">Gender</label>
+    <select formControlName="description" class="form-control">
+        <option disabled>Select Gender </option>
+        <option>Choose Gender Description </option>
+        <option *ngFor="let description of gender">{{description}}</option>
+    </select>
+    <div *ngIf="f['description'].touched && f['description'].invalid" class="alert alert-danger">
+        <div *ngIf="f['description'].errors['required']">gender is required</div>
+    </div>
+</div>
+
+
+<div class="form-group">
+    <div *ngIf="childForm.controls['address'].errors && 
+    (childForm.controls['address'].touched || childForm.controls['address'].dirty)">
+        Address is required
+    </div>
+
+    <label for="address">Address</label>
+    <input class="form-control" type="text" name="address" id="address" formControlName="address">
+</div>
+
+
+ 
+      <input type="submit" value="Update" class="btn btn-primary">
+</form>

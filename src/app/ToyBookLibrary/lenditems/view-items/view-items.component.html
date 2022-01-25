@@ -1,0 +1,26 @@
+<table class="table table-bordered">
+  <tr>
+      <th colspan="float-right" colspan="7"></th>
+  </tr>
+  <tr *ngIf="lenditems.length > 0">
+      <th>LendId</th>
+      <th>Fine</th>
+      <th>Lend Date</th>
+      <th>Return Date</th>
+      <th>BookId</th>
+      <th>ChildId</th>
+      <th>ToyId</th>
+      
+  </tr>
+  <tr *ngFor="let s of lenditems">
+      <td>{{s.lendId}}</td>
+      <td>{{s.fine}}</td>
+      <td>{{s.lendDate}}</td>
+      <td>{{s.returnDate}}</td>
+      <td>{{s.book.bookId}}</td>
+      <td>{{s.child.childId}}</td>
+      <td>{{s.toy.toyId}}</td>
+      <!-- <td><button class="btn btn-danger" (click)="deleteLend(s)"> Delete</button>
+          <button class="btn btn-warning" (click)="editLend(s)" style="margin-left: 20px;"> Update </button></td> -->
+  </tr>
+</table>
